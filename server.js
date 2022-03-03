@@ -12,8 +12,8 @@ app.get('/productos', (req, res) => {
 
 app.get('/productoRandom', (req, res) => {
   //TODO not hardcode the max number for random and create random as a funtion in utils file
-  min = Math.ceil(1);
-  max = Math.floor(100);
+  let min = Math.ceil(1);
+  let max = Math.floor(100);
   let random = Math.floor(Math.random() * (max - min) + min);
   container.getById(random)
     .then(product => res.status(200).json(product))
