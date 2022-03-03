@@ -6,7 +6,7 @@ let container;
 
 app.get('/productos', (req, res) => {
   container.getAll()
-    .then(products => res.status(200).send(products))
+    .then(products => res.status(200).json(products))
     .catch(err => res.status(500).send(err));
 })
 
@@ -16,7 +16,7 @@ app.get('/productoRandom', (req, res) => {
   max = Math.floor(100);
   let random = Math.floor(Math.random() * (max - min) + min);
   container.getById(random)
-    .then(product => res.status(200).send(product))
+    .then(product => res.status(200).json(product))
     .catch(err => res.status(500).send(err));
 })
 
