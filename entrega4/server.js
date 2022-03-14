@@ -3,7 +3,8 @@ const app = express();
 const productosRoutes = require('./routes/productos');
 const PORT = 8080;
 
-app.use(express.urlencoded({extended: true}));
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use('/api/productos', productosRoutes);
